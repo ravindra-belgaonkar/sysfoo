@@ -1,6 +1,7 @@
 FROM maven:3.6.3-jdk-11-slim as build
 WORKDIR /opt/demo
 COPY . /opt/demo
+EXPOSE 8888
 RUN mvn package -D skipTests
 FROM tomcat as run
 WORKDIR /usr/local/tomcat
